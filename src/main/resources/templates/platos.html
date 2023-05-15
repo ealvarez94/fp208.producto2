@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Platos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+
+  <div class="row col-12">
+    <h2 class="col-8 ">paracasa</h2>
+    <a class="btn col-1 btn-primary m-1" href="clientes" role="button">Clientes</a>
+    <a class="btn col-1 btn-primary m-1" href="platos" role="button">Platos</a>
+    <a class="btn col-1 btn-primary m-1" href="pedidos" role="button">Pedidos</a>
+  </div>
+
+  <table class="table mt-5">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>NOMBRE</th>
+      <th>DESCRIPCION</th>
+      <th>PRECIO</th>
+      <th>ACCIONES</th>
+    </tr>
+    <tbody>
+    <tr th:each="plato:${platos}">
+      <td th:text="${plato.id}"></td>
+      <td th:text="${plato.nombre}"></td>
+      <td th:text="${plato.descripcion}"></td>
+      <td th:text="${plato.precio}"></td>
+      <td>
+        <a th:href="@{/editar-plato/}+${plato.id}" class="btn btn-warning">Editar</a>
+        <a th:href="@{/eliminar-plato/}+${plato.id}" class="btn btn-danger">Eliminar</a>
+      </td>
+    </tr>
+    </tbody>
+    </thead>
+  </table>
+  <div class="row  text-center mt-5">
+    <a th:href="@{/new-plato}" class="btn col-2 btn-primary center" href="#" role="button">Nuevo Plato</a>
+  </div>
+</div>
+</body>
+</html>
