@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class GeneralControlador {
 
-    @GetMapping("/users")
+    @GetMapping("/login")
     public String personas() {
-        return "users";
+        return "login";
     }
 
 }

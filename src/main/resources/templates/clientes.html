@@ -43,6 +43,9 @@
   <div class="row mt-5">
     <a th:href="@{/new-cliente}" class="btn col-2 btn-primary " href="#" role="button">Nuevo Cliente</a>
   </div>
+  <form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+  </form>
 </div>
 </body>
 </html>
